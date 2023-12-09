@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.recipe {
+  color: white;
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid aquamarine;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.recipe:hover {
+  background-color: aquamarine;
+  color: black;
+  border: 1px solid black;
+}
+
+.recipeImg {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.detailImg {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.cartButton {
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid aquamarine;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cartButton:hover {
+  background-color: aquamarine;
+  border: 1px solid black;
+  color: black;
+}
+
+.cartButton:active {
+  background-color: lightgreen;
+}

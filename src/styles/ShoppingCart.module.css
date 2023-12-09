@@ -1,0 +1,44 @@
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inputPair {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputPair input {
+  border-radius: 8px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.inputsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.button {
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid aquamarine;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: aquamarine;
+  border: 1px solid black;
+  color: black;
+}
+
+.button:active {
+  background-color: lightgreen;
+}
