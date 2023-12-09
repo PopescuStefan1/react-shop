@@ -1,11 +1,9 @@
-import { useState } from "react";
 import ShoppingCartList from "./ShoppingCartList";
 import ShoppingCartInputs from "./ShoppingCartInputs";
 
 function ShoppingCart(props) {
-  const [ingredients, setIngredients] = useState(props.ingredients);
   const handleAdd = (name, amount) => {
-    const newIngredients = new Map(ingredients);
+    const newIngredients = new Map(props.ingredients);
 
     if (newIngredients.has(name)) {
       const newAmount = Number(amount) + Number(newIngredients.get(name));
@@ -14,13 +12,20 @@ function ShoppingCart(props) {
       newIngredients.set(name, Number(amount));
     }
 
-    setIngredients(newIngredients);
+    props.onUpdate(newIngredients);
+  };
+
+  const handleRemove = (name) => {
+    props.onRemove(name);
   };
 
   return (
     <div>
       <ShoppingCartInputs onAdd={handleAdd} />
-      <ShoppingCartList ingredients={ingredients} />
+      <ShoppingCartList
+        ingredients={props.ingredients}
+        onRemove={handleRemove}
+      />
     </div>
   );
 }

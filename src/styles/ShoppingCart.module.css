@@ -42,3 +42,28 @@
 .button:active {
   background-color: lightgreen;
 }
+
+.shopLi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 30px;
+  margin-bottom: 0.5rem;
+}
+
+.liButton {
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.liButton:hover {
+  background-color: darkorange;
+  color: black;
+  transform: scale(1.05);
+}

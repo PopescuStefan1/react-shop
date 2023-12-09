@@ -22,27 +22,41 @@ function App() {
         newIngredients.set(name, Number(amount));
       }
     });
-    console.log(newIngredients);
+    setIngredients(newIngredients);
+  };
+
+  const updateIngredients = (newIngredients) => {
+    setIngredients(newIngredients);
+  };
+
+  const removeIngredient = (name) => {
+    const newIngredients = new Map(ingredients);
+    newIngredients.delete(name);
+
     setIngredients(newIngredients);
   };
 
   return (
     <Router>
-      <div>
-        <Navbar />
-        <div className="App-header">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/recipes"
-              element={<Recipes onAdd={addIngredientsFromRecipe} />}
-            />
-            <Route
-              path="/shopping-cart"
-              element={<ShoppingCart ingredients={ingredients} />}
-            />
-          </Routes>
-        </div>
+      <Navbar />
+      <div className="App-header">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/recipes"
+            element={<Recipes onAdd={addIngredientsFromRecipe} />}
+          />
+          <Route
+            path="/shopping-cart"
+            element={
+              <ShoppingCart
+                ingredients={ingredients}
+                onUpdate={updateIngredients}
+                onRemove={removeIngredient}
+              />
+            }
+          />
+        </Routes>
       </div>
     </Router>
   );
